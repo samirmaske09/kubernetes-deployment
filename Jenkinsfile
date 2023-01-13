@@ -5,6 +5,7 @@ pipeline {
          stage('Pull') {
               steps {
                  echo "Build stage is running"
+                 git branch: 'main', url: 'https://github.com/RohitKakde27/kubernetes-deployment.git'
                     }
                         }
          
@@ -12,6 +13,12 @@ pipeline {
          stage('Build') {
               steps {
                  echo "Build stage is running"
+                 sh """
+                 docker image build -t dkd .
+                 docker image tag samirmaske23/dkd:latest
+                 docker push samirmaske23/dkd:latest
+                 """
+
                     }
                         }
          
