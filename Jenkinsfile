@@ -15,7 +15,7 @@ pipeline {
                  echo "Build stage is running"
                  sh 'docker image build -t dkd .'
                  sh "docker image tag dkd samirmaske23/dkd:latest"
-                 sh "docker push samirmaske23/dkd:latest"
+                 
                      }
                         }
          
