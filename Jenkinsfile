@@ -12,14 +12,19 @@ pipeline {
          
          stage("Docker build"){
               steps {
-               sshagent(['docker.']) {
+                   withCredentials([string(credentialsId: 'dockerhubjenkins-pwd', variable: 'dockerhubjenkins-pwd')]) {
+                        sh 'docker build -t a .'
+                        sh 'docker login -u samirmaske23 -p ${dockerhubjenkins-pwd}'
+}
+                        sh 'docker push samirmaske23/a:latest'
+               
                      
                      
-                     sh   '    docker image build -t a .'
-                     sh   '    docker image tag a samirmaske23/a:latest '
-                     sh 'docker login -u samirmaske23 -p Samir@248652'
-                     sh   '    docker image push  samirmaske23/a:latest '
-                                    }
+                     #sh   '    docker image build -t a .'
+                     #sh   '    docker image tag a samirmaske23/a:latest '
+                     #sh 'docker login -u samirmaske23 -p Samir@248652'
+                     #sh   '    docker image push  samirmaske23/a:latest '
+                                    
                      }
                               }      
                              
