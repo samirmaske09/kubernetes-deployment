@@ -17,10 +17,10 @@ pipeline {
                  sshagent(['docker.']) {
     
                      sh   """
-                       ssh  sudo docker version
-                       ssh  sudo docker build -t jhooq-docker-demo .
-                       ssh  sudo docker image list
-                       ssh  docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo
+                       ssh   docker version
+                       ssh   docker build -t jhooq-docker-demo .
+                       ssh   docker image list
+                       ssh   docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo
                          """
                                         }
                      }
