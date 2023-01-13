@@ -17,9 +17,9 @@ pipeline {
                  sshagent(['docker.']) {
     
               
-                     sh   '    docker build -t jhooq-docker-demo .'
-                     sh   '    docker image list '
-                     sh   '    docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo'
+                     sh   '    docker build -t a .'
+                     sh   '    docker image tag a samirmaske23/a:latest '
+                     sh   '    docker image push  samirmaske23/a:latest '
                          
                                         }
                      }
