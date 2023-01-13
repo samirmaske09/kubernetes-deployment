@@ -13,13 +13,10 @@ pipeline {
          stage('Build') {
               steps {
                  echo "Build stage is running"
-                 sh """
-                 docker image build -t dkd .
-                 docker image tag dkd samirmaske23/dkd:latest
-                 docker push samirmaske23/dkd:latest
-                 """
-
-                    }
+                 sh "docker image build -t dkd ."
+                 sh "docker image tag dkd samirmaske23/dkd:latest"
+                 sh "docker push samirmaske23/dkd:latest"
+                     }
                         }
          
          
