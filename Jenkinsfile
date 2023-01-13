@@ -12,14 +12,9 @@ pipeline {
          
          stage("Docker build"){
               steps {
-                 sshagent(['docker.']) {
-    
-              
                      sh   '    docker build -t a .'
                      sh   '    docker image tag a samirmaske23/a:latest '
                      sh   '    docker image push  samirmaske23/a:latest '
-                         
-                                        }
                      }
                               }      
                              
