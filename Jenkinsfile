@@ -15,7 +15,7 @@ pipeline {
          stage("Docker build"){
               steps {
               sshagent(['docker'])  {
-        sh 'sudo chown centos:centos  /var/run/docker.sock '
+        
         sh 'docker version'
         sh 'docker build -t jhooq-docker-demo .'
         sh 'docker image list'
