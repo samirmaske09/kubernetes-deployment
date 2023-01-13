@@ -16,12 +16,11 @@ pipeline {
               steps {
                  sshagent(['docker.']) {
     
-                     sh   """
-                       ssh   docker version
-                       ssh   docker build -t jhooq-docker-demo .
-                       ssh   docker image list
-                       ssh   docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo
-                         """
+                     sh   ' ssh   docker version '
+                     sh   ' ssh   docker build -t jhooq-docker-demo .'
+                     sh   ' ssh   docker image list '
+                     sh   '  ssh   docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo'
+                         
                                         }
                      }
                               }      
