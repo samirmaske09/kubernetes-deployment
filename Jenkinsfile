@@ -1,7 +1,7 @@
 pipeline {
      agent {
            label 'master'
-       }
+            }
      stages {
          
          stage('Pull') {
@@ -21,8 +21,8 @@ pipeline {
                         docker tag jhooq-docker-demo rahulwagh17/jhooq-docker-demo:jhooq-docker-demo
          """
                      }
-              }      
-                             }
+                              }      
+                             
          
          
          stage('Test') {
@@ -39,7 +39,7 @@ pipeline {
                          }
             }
 
-
+}
 
 
 
