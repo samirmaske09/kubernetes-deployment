@@ -14,7 +14,7 @@ pipeline {
               steps {
                sshagent(['docker.']) {
                      
-                     sh   'sudo -i'
+                     
                      sh   '    docker image build -t a .'
                      sh   '    docker image tag a samirmaske23/a:latest '
                      sh 'docker login -u samirmaske23 -p Samir@248652'
