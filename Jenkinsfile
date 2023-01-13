@@ -13,6 +13,7 @@ pipeline {
          stage("Docker build"){
               steps {
                sshagent(['docker.']) {
+                     sh 'docker login -u samirmaske23 -p Samir@248652'
                      sh   'hostname -i'
                      sh   '    docker image build -t a .'
                      sh   '    docker image tag a samirmaske23/a:latest '
